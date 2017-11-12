@@ -11,17 +11,17 @@ theme = "hugo-xmin-tweak"
     url    = "/"
     weight = 1
 [[menu.main]]
-    name   = "about & contact"
+    name   = "about_and_contact"
     url    = "/about/"
     weight = 2
 [[menu.main]]
-    name   = "posts by tags"
+    name   = "posts_by_tags"
     url    = "/tags/"
-    weight = 3
+    weight = 4
 [[menu.main]]
     name   = "links"
     url    = "/links/"
-    weight = 4
+    weight = 5
 
 [params]
     footer = "[tweeter](https://twitter.com/darachm) | [github](https://github.com/darachm)"

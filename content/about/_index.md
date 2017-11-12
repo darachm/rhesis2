@@ -1,30 +1,22 @@
 ---
-title: "About"
+title: "about & contact"
 ---
 
+Da<span style="unicode-bidi:bidi-override;direction:rtl;">car</span>h
+Mi<span style="unicode-bidi:bidi-override;direction:rtl;">rell</span>
+is a phd student finishing up work in David Gresham's lab at NYU.
+Darach is trying to figure out the extent, mechanisms, and role
+of stability control in reprogramming the budding yeast transcriptome
+upon an upshift in growth.
+Darach does wetbench, bioinformatics, bikes, and has lived in a 
+linux box for about 7 years (ubuntu, crunchbang, arch).
+Darach likes `\LaTeX`, but mostly does everything through 
+`rmarkdown` and `pandoc`.
 
-<!--
-tweeter
-
-email
-
-careerwise
-
-orcid/pubz
-
-contact philosophy
-
-          <span style="unicode-bidi:bidi-override;direction:rtl;">
-            ude.uyn@762
-          </span>
-          <div id="emailpopup">
-<a href="http://stackoverflow.com/questions/19165364/cycling-animation-of-rainbow-coloured-text" target="_blank">That's reversed text, so don't copypaste</a>
-          </div>
-
+[Google scholar here](https://scholar.google.com/citations?user=KhpQTgUAAAAJ)
 <a href="http://orcid.org/0000-0002-2264-7900" target="_blank">
-<img src="./img/orcid.png">
+<img src="orcid.png">
 </a>
 
-
-that might be a thing
+<!--contact philosophy
 --->
