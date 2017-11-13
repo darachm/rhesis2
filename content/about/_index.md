@@ -14,7 +14,7 @@ Darach likes `\LaTeX`, but mostly does everything through
 `rmarkdown` and `pandoc`.
 
 [Google scholar here](https://scholar.google.com/citations?user=KhpQTgUAAAAJ)
-<a href="http://orcid.org/0000-0002-2264-7900" target="_blank">
+<a href="http://orcid.org/0000-0002-2264-7900" target="_blank" class="imglink">
 <img src="orcid.png">
 </a>
 
