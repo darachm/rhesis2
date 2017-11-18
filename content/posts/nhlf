@@ -1,0 +1,262 @@
+SCIENCE
+non-hierarchical_lab_folder_organizational_scheme,_and_scripts
+
+<p>
+I've recently embarked on a bit of a reorg. I keep running into the
+issue that I want to access my research work in a couple different
+ways
+</p>
+
+<ul>
+<li>a project-oriented mode, where I actually do the work</li>
+<li>different types of files for backing up ( don't want to git my
+  data, don't really want to keep re-taring my scripts ) </li>
+<li>looking for figures from disparate experiments, maybe in the
+  same project but maybe not, trying to build up presentations</li>
+</ul>
+
+<p>
+It's a mess. So, inspired by the good work of 
+<a href="tmsu.org">tmsu</a>, I'm trying a OneBigFolder approach.
+The idea is to not organize files, except to organize a register
+of tag attributes of a seperate file. This is done with a bash
+script that generates an entry in an input register, and a perl
+script which reads the inputs and merges it in with the master,
+and detects deleted files.
+</p>
+
+<p>
+Then, unlike the Lamarkian approach of building a hierarchy of tags
+that is rationally expected to be used, I use the Darwinian approach
+of generating all possible tag hierarchys (that can exist given our
+files) and allowing yours truely the user to select the survivors by
+usage. This is done much less efficiently than tmsu, as I generate it
+statically and laboriously instead of elegantly.
+</p>
+
+<p>
+Below is the code, so far. It's in week one of testing so here goes.
+</p>
+
+<h5>tagging utility</h5>
+<pre>
+<code>
+#!/usr/bin/bash                                                        
+filestring=$1;shift                                                    
+for i in $(/bin/ls $filestring)                                        
+do                                                                     
+  echo "Tagging $i with"                                               
+  newEntry=$(echo -n $(md5sum $i) | gawk '{print $1}'),$i              
+  for arg                                                              
+  do                                                                   
+    echo "  "$arg                                                      
+    newEntry=$newEntry,$arg                                            
+  done                                                                 
+  echo $newEntry >> ./mgmt/registerInput                               
+done 
+</code>
+</pre>
+
+<h5>merging utility</h5>
+<pre>
+<code>
+#!/usr/bin/perl -w
+use strict;
+
+use Time::localtime;
+my $currtime = 
+  sprintf("%02d",@{localtime(time)}[5]%100).
+  sprintf("%02d",@{localtime(time)}[4]+1).
+  sprintf("%02d",@{localtime(time)}[3]).
+  sprintf("%02d",@{localtime(time)}[2]).
+  sprintf("%02d",@{localtime(time)}[1]).
+  sprintf("%02d",@{localtime(time)}[0]);
+
+my (%byFile,%byTag);
+
+if (open(HR,"&lt;./mgmt/registerInput")) {
+  while (&lt;HR>) {
+    chomp;
+    my @entry = split(/,/,$_);
+    my $hash = $entry[0];
+    my $file = $entry[1];
+    shift @entry;shift @entry;
+  
+    if (defined $byFile{$file}) {
+      ${$byFile{$file}}[0] = $hash; 
+      push @{${$byFile{$file}}[1]}, @entry;
+    } else {
+      @{$byFile{$file}} = ($hash); 
+      push @{$byFile{$file}}, \@entry;
+    }
+    
+    print "added $file ...\n";
+  }
+  close HR;
+  system("cp ./mgmt/registerInput ./mgmt/bk/registerInput".$currtime);
+  system("rm ./mgmt/registerInput");
+  print "deleted the old input, but it's backed up at ./mgmt/bk\n";
+} else {
+  print "ain't no inputs to proc\n";
+}
+
+if (open(OLDMR,"&lt;./mgmt/registerMaster")) { 
+  while (&lt;OLDMR>) {
+    chomp;
+    my @entry = split(/,/,$_);
+    my $hash = $entry[0];
+    my $file = $entry[1];
+    shift @entry;shift @entry;
+  
+    if (defined $byFile{$file}) {
+      ${$byFile{$file}}[0] = $hash; 
+      push @{${$byFile{$file}}[1]}, @entry;
+    } else {
+      @{$byFile{$file}} = ($hash); 
+      push @{$byFile{$file}}, \@entry;
+    }
+  
+  }
+  close OLDMR;
+  system("cp ./mgmt/registerMaster ./mgmt/bk/registerMaster".$currtime);
+  print "old master is backed up at ./mgmt/bk\n";
+} else {
+  print "ain't no old master btw\n";
+}
+
+  # here we make them unique
+for my $k (keys(%byFile)) {
+#  print $k."\n\t";
+  my @uniqTags = do { my %seen; grep { !$seen{$_}++ } @{${$byFile{$k}}[1]} ; };
+    # from: http://perlmaven.com/unique-values-in-an-array-in-perl
+  @{${$byFile{$k}}[1]} = @uniqTags;
+  for my $l (@{${$byFile{$k}}[1]}) {
+#    print $l.",";
+    push(@{$byTag{$l}}, $k);
+  }
+#  print "\n";
+}
+
+  # look for deletions
+opendir(FOLDER,"./") or die "can't open the whole lab folder";
+my @folder = readdir(FOLDER);
+my @fkeys = keys(%byFile);
+for my $k (@folder) {
+  @fkeys = grep { $_ ne $k } @fkeys;
+}
+@fkeys = grep(!/\//,@fkeys);
+print "\nDetected deletions of { @fkeys }\n";
+
+open(DR,">>","./mgmt/bk/registerDeleted".$currtime) or die;
+for my $k (@fkeys) {
+  print DR ${$byFile{$k}}[0].",".$k;
+  print DR ",deleted";
+  for my $tag (@{${$byFile{$k}}[1]}) {
+    print DR ",".$tag;
+  }
+}
+close DR;
+
+  # write the master register
+open(MR,">","./mgmt/registerMaster") or die;
+for my $file (sort(keys(%byFile))) {
+  next if (grep { $_ eq $file } @fkeys);
+  print MR ${$byFile{$file}}[0].",".$file;
+  for my $tag (@{${$byFile{$file}}[1]}) {
+    print MR ",".$tag;
+  }
+  print MR "\n";
+}
+close MR;
+
+print "wrote master register\n";
+</code>
+</pre>
+
+<h5>tree builder, I call it the tosl (tree of some/sym links)</h5>
+<pre>
+<code>
+#!/usr/bin/bash
+
+  # this function removes the first argument from the rest, so its
+  # a negative slicer
+function removeElement {
+  local leader=$1;shift
+  unset tmp;declare -a tmp
+  for i in $@
+  do
+    if [ $i != $leader ]
+    then
+      tmp+=($i)
+    fi
+  done
+  echo "${tmp[@]}"
+}
+
+  # give me the file, the basedir, the current tag, then all other 
+  # tags and I'll build you this branch point
+function buildBranch {
+    # we recieve a few arguments, the original filename
+  local file=$1;shift
+    # the parent directory of this tag
+  local basedir=$1;shift
+    # what tag we're on
+  local thisTag=$1;shift
+    # and the remaining tags to do
+  local sublist=$(removeElement $thisTag $@)
+
+  if [ ! -d $basedir/$thisTag ]
+  then
+      # make a directory for this tag
+    echo did: mkdir $basedir/$thisTag
+    mkdir $basedir/$thisTag
+  fi
+
+  trfile=$(echo -n $file | sed 'y/\//_/')
+  if [ ! -f $basedir/$thisTag/$trfile ]
+  then
+      # add appropriate link, if it exists
+#    echo did: ln -s ~/lab/$file $basedir/$thisTag/$trfile
+    ln -s ~/lab/$file $basedir/$thisTag/$trfile
+  fi
+
+  IFS=" "
+  for k in ${sublist[@]}
+  do
+      # for all remaining tags, call this again
+    buildBranch $file $basedir/$thisTag $k ${sublist[@]}
+  done
+  return
+}
+
+for i in $(cat ./mgmt/registerMaster)
+do
+    # start by chopping up each line (record) by commas
+  startIFS=$IFS
+  IFS=","
+  unset arry;declare -a arry
+  for j in $i
+  do
+    arry+=($j)
+  done
+  IFS=$startIFS
+
+    # parse out each element and declare stuff, chop first two
+  file=${arry[1]}
+  unset arry[0];unset arry[1]
+  unset tags;declare -a tags
+  for j in ${arry[@]}
+  do
+    tags+=($j)
+  done
+
+    # build the tosl recursively
+  for j in ${tags[@]}
+  do
+    buildBranch $file $(pwd)/tosl $j ${tags[@]}
+  done
+done
+</code>
+</pre>
+
+

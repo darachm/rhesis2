@@ -1,0 +1,26 @@
+
+# Protocols and Pipelines
+
+Over the last few years, I've made strong improvements to my data
+analysis skills. I'm no programmer, but I can get things done.
+
+One of the most frustrating things is that people expect analysis
+of disparate datasets from different experiments on different
+biology all to be done with a pipeline.
+
+Things change, things are different.
+
+I think the best case for making a black-box pipeline is 
+"reproducibility", but not reproducability in the sense of getting
+the same result twice (even to setting random seeds similarly, etc).
+
+Rather I think it's a conceptual point, of making an analysis a black
+box because that's how some folks think of an instrument. They want
+to use a computer like a PCR machine, where you tell it what to do
+and it gets it done. Trouble is, just like thermocyclers, garbage in
+garbage out.
+
+This philosophical divide, of how familiar scientists want to be with
+their apparatus, is apparent in other instrumentation. 
+Flow cytometers, sony vs aria.
+

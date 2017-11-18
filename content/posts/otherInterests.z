@@ -1,0 +1,57 @@
+SCIENCE
+other_interests
+
+<h3>choice of regulatory mechanisms</h3>
+<p>
+I'm interested in how the natural history of a biological regulatory 
+network constrains the use of certain regulatory mechanisms, say
+transcriptional regulation or post-translational modifications, to
+implement an internal representation of its environment?
+Do fast switching adaptations tend to use post-tln mechanisms?
+Can you quantify the cost, metabolic & of noise, for different
+possible mechanisms?
+</p>
+
+<p>
+This is somewhat inspired by Edo Kussel's work on switching,
+particularly 
+<a href="https://scholar.google.com/scholar?cluster=17349678693372657090">theory</a> 
+and 
+<a href="https://scholar.google.com/scholar?cluster=15846599554137491415">measurements of switching</a>.
+</p>
+
+<h3>bean board funnel - 
+the quincunx needs variation and the constraint of death, birth
+</h3>
+
+<p>
+Cellular states, or configurations, are practically infinite.
+For the sake of comprehension, we can discretize these into
+phenotypes, a tactic that perhaps we have evolved to do. These 
+phenotypic states are explored, the cell can go between them, and
+then eventually it dies. If it's successful, it's passed on some
+information to the next generation.
+But life seems to not just pass on a rich phenotype, but rather
+passes on a genotype, which is of paltry complexity by comparison.
+Only 4 positions per base of DNA. Why? Why not pass on phenotype?
+</p>
+
+<img src="./img/galton1889.png" width="256px" style="float:left;margin:auto;"/>
+
+<p>
+I think it's analogous to the funnel on top of a Galton beanboard, or 
+<a href="https://en.wikipedia.org/wiki/Bean_machine">quincunx</a>.
+Without the funnel, you don't control the distribution.
+You can't really specify what kind of phenotypes, except from
+existing transitions.
+So maybe it also lets you take more "assertive" steps across
+evolutionary space, where you can jump between stable phenotypes
+by virtue of starting in different places.
+Working on it.
+</p>
+
+<span style="width:100%;clear:both;display:block;"></span>
+
+
+
+
