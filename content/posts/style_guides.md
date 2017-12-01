@@ -27,4 +27,6 @@ without worrying about the comma on the preceeding line.
 
 # 
 
-<!--- an idea https://github.com/tibbe/haskell-style-guide/blob/master/haskell-style.md -->
+<!--- an idea https://github.com/tibbe/haskell-style-guide/blob/master/haskell-style.md 
+http://ieng9.ucsd.edu/~cs30x/indhill-cstyle.html
+-->
