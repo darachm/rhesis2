@@ -26,3 +26,5 @@ without worrying about the comma on the preceeding line.
 # Python
 
 # 
+
+<!--- an idea https://github.com/tibbe/haskell-style-guide/blob/master/haskell-style.md -->
