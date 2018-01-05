@@ -15,6 +15,10 @@ theme = "hugo-xmin-tweak"
     url    = "/about/"
     weight = 2
 [[menu.main]]
+    name   = "posts"
+    url    = "/posts/"
+    weight = 3
+[[menu.main]]
     name   = "posts_by_tags"
     url    = "/tags/"
     weight = 4
