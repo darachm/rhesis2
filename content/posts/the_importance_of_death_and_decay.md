@@ -5,6 +5,8 @@ draft: true
 ---
 
 
+<img src="../galton1889.png" />
+
 Stability is important for software projects as well:
 https://metarabbit.wordpress.com/2017/11/18/numpy-scipy-backwards-stability-debate-and-why-freezing-versions-is-not-the-solution/
 In that link, some folks discuss how changes to scipi/numpy are breaking code.
