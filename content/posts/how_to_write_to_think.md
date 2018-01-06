@@ -7,6 +7,14 @@ tags:
   - methods
 ---
 
+I think I can boil down motivations in science to a couple of 
+different reasons:
+
+- curiousity
+- ambition/prestige
+- fanatical devotion to a higher purpose
+- spite
+
 I spent a lot of my phd working on skills that I did not need to work
 on, suffering frustrations that I could have bypassed, and all
 together spending too much time flitting between half-baked ideas
