@@ -1,0 +1,101 @@
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5em;
+}
+
+/* header and footer areas */
+.menu { padding: 0; }
+.menu li { display: inline-block; }
+.article-meta { text-decoration: none; }
+.menu, footer { text-align: center; }
+.title { font-size: 1.4em; font-style: bold; clear:right; }
+hr { border-style: dashed; color: #ddd; }
+
+/* code */
+pre {
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 1em;
+  overflow-x: auto;
+}
+code { background: #f9f9f9; }
+pre code { background: none; }
+
+/* misc elements */
+img, iframe, video { max-width: 100%; }
+main { hyphens: auto; }
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  padding: 3px 1em 3px;
+}
+
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee }
+
+/* now Darach's tweaks */
+.menu li #home:hover {
+  background-color: #fc8d62;
+}
+.menu li #about_and_contact:hover {
+  background-color: #a6d854;
+}
+.menu li #posts:hover {
+  background-color: #a0ffff;
+}
+.menu li #posts_by_tags:hover {
+  background-color: #ffa0ff;
+}
+.menu li #links:hover {
+  background-color: #ffff99;
+}
+
+a {
+  text-decoration: none;
+/* This bit ripped from the YAML spec: http://www.yaml.org/spec/1.2/spec.html */
+  background: url(../term.png) no-repeat bottom right;
+/*  background: #eee; padding: 2px; border-radius: 2px;*/
+}
+a:hover {
+  /*background: #aaa; color: #fff;*/
+  text-decoration: underline;
+  background: none;
+}
+.menu a:hover {
+  text-decoration: none;
+}
+
+a.imglink {
+  background: #fff;
+}
+
+.menu a {
+  padding: 10px;
+  border-radius: 10px;
+  color: #000;
+  background: #eee;
+}
+
+.menu { opacity:.5; animation-duration:1s; animation-name:fadeout;}
+.menu:hover { opacity:1; animation-duration:1s; animation-name:fadein;}
+footer { opacity:.5; animation-duration:1s; animation-name:fadeout;}
+footer:hover { opacity:1; animation-duration:1s; animation-name:fadein;}
+
+.mainpage { opacity:1; animation-name:none; }
+
+@keyframes fadein {
+  from { opacity:0.5; }
+  to { opacity:1.0; }
+}
+@keyframes fadeout {
+  from { opacity:1.0; }
+  to { opacity:0.5; }
+}

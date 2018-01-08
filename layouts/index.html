@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+
+{{if not .IsHome }}
+<span class="title">{{ .Title }}</span>
+{{ end }}
+
+{{ .Content }}
+
+{{ partial "footer.html" . }}

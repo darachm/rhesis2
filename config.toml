@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "rhesis"
-theme = "hugo-xmin-tweak"
+#theme = "hugo-xmin-tweak"
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
