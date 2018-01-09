@@ -3,6 +3,7 @@ title = "rhesis"
 #theme = "hugo-xmin-tweak"
 baseURL = "http://www.rhesis.com"
 
+
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
     note = "/note/:year/:month/:day/:slug/"
