@@ -1,7 +1,7 @@
 languageCode = "en-us"
 title = "rhesis"
 baseURL = "http://www.rhesis.com/"
-canonifyURLs = true
+#canonifyURLs = true
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
