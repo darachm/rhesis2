@@ -6,6 +6,7 @@ tags:
   - guide
   - git
   - hugo
+draft: true
 ---
 
 This site is typset by [Hugo](https://gohugo.io/documentation/),

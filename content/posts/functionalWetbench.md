@@ -25,3 +25,5 @@ biological radio as example of still functional bit, omnigene
 then that example of evo of 64 transistors, em interference
 
 HG Wells redicosvery of the unique
+
+( cargocult do not follow in the footsteps, but pursue the goal)
