@@ -3,6 +3,7 @@ title = "rhesis"
 baseURL = "http://www.rhesis.com"
 canonifyURLs = true
 
+
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
     note = "/note/:year/:month/:day/:slug/"
