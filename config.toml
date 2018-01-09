@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "rhesis"
-baseURL = "http://www.rhesis.com"
+baseURL = "http://www.rhesis.com/"
 canonifyURLs = true
 
 
