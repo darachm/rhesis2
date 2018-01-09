@@ -2,9 +2,6 @@
 title: "Home"
 ---
 
-This is a personal site.
-It's under construction!
-
 
 <!--
 - [posts](posts) are organized by [tags](/tags/)

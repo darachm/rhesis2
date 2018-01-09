@@ -45,7 +45,7 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
 .menu li #home:hover {
   background-color: #fc8d62;
 }
-.menu li #about_and_contact:hover {
+.menu li #about:hover {
   background-color: #a6d854;
 }
 .menu li #posts:hover {
@@ -84,12 +84,13 @@ a.imglink {
   background: #eee;
 }
 
-.menu { opacity:.5; animation-duration:1s; animation-name:fadeout;}
+.menu { opacity:.5; animation-duration:3s; animation-name:fadeout;}
 .menu:hover { opacity:1; animation-duration:1s; animation-name:fadein;}
-footer { opacity:.5; animation-duration:1s; animation-name:fadeout;}
+footer { opacity:.5; animation-duration:3s; animation-name:fadeout;}
 footer:hover { opacity:1; animation-duration:1s; animation-name:fadein;}
 
 .mainpage { opacity:1; animation-name:none; }
+.mainpage:hover { opacity:1; animation-name:none;}
 
 @keyframes fadein {
   from { opacity:0.5; }
@@ -99,3 +100,5 @@ footer:hover { opacity:1; animation-duration:1s; animation-name:fadein;}
   from { opacity:1.0; }
   to { opacity:0.5; }
 }
+
+.mainpage li a#about { background-color:pink; }

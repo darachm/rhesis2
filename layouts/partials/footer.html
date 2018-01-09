@@ -1,4 +1,9 @@
+{{if not .IsHome }}
   <footer>
+{{end}}
+{{if .IsHome }}
+  <footer class="mainpage">
+{{end}}
   {{ partial "foot_custom.html" . }}
   {{ with .Site.Params.footer }}
   <!--<hr/>-->
