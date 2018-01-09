@@ -30,7 +30,7 @@ You want papers?
 
 <a href="http://orcid.org/0000-0002-2264-7900" target="_blank" 
     class="imglink">
-  <img src="img/orcid.png">
+  <img src="../img/orcid.png">
 </a>
 
 #### Contact

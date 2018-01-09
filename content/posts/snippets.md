@@ -3,12 +3,11 @@ title: ""
 date: 
 draft: true
 ---
+
 <!--
 LIST
 snippets,_quotes,_interesting_hexagrams_&#19904&#19905;
 -->
-
----
 
 ### interesting i-ching readings
 

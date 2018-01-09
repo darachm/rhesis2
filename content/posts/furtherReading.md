@@ -10,8 +10,6 @@ further_reading,_a_list_with_links
 
 Suggested reading and a list of links, like it says on the tin.
 
----
-
 ### books and the like
 
 - [Can a biologist fix a radio?](http://dx.doi.org/10.1016/S1535-6108(02)00133-2)
