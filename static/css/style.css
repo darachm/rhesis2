@@ -51,7 +51,7 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
 .menu li #posts:hover {
   background-color: #a0ffff;
 }
-.menu li #posts_by_tags:hover {
+.menu li #posts-by-tags:hover {
   background-color: #ffa0ff;
 }
 .menu li #links:hover {
@@ -102,3 +102,4 @@ footer:hover { opacity:1; animation-duration:1s; animation-name:fadein;}
 }
 
 .mainpage li a#about { background-color:pink; }
+
