@@ -20,7 +20,7 @@ baseURL = "http://www.rhesis.com/"
     url    = "/posts/"
     weight = 3
 [[menu.main]]
-    name   = "posts_by_tags"
+    name   = "posts by tags"
     url    = "/tags/"
     weight = 4
 [[menu.main]]
