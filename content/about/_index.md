@@ -21,8 +21,7 @@ I ride a '90 stumpjumper comp with big tyres and
 upside-down thumbies.
 I've lived in a linux box for about 7 years 
 <!-- since ubuntu 10.10, 2010-10-10 -->
-(ubuntu, crunchbang, arch), and like `\LaTeX` 
-(but mostly do everything through `pandoc`).
+(ubuntu, crunchbang, arch), and like `\LaTeX`.
 My favorite book is the Tao Te Ching translated by UK LeGuin.
 
 You want papers?  
