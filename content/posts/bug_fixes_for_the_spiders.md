@@ -1,13 +1,14 @@
 ---
-title: ""
-date: 
+title: "Bugs (reports) for the (web) spiders"
+date: 2018-01-26
 draft: true
+tags: 
+  - bugs
+  - reference
 ---
-OTHER
-various_bugs_and_problems,_some_solutions
 
-<p>Here, I document problems I've encountered and some notes to help
-others figure out similar problems of their own</p>
+Here, I document problems I've encountered and some notes to help
+others figure out similar problems of their own
 
 <ul>
 <li>
