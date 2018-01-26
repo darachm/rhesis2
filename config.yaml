@@ -1,30 +1,31 @@
-languageCode : "en-us"
-title : "rhesis"
+title: "rhesis"
+languageCode: "en-us"
+
 #baseURL : "http://www.rhesis.com/"
 canonifyURLs : false
 
 permalinks:
-  post : "/post/:year/:month/:day/:slug/"
-  note : "/note/:year/:month/:day/:slug/"
+  post: "/post/:year/:month/:day/:slug/"
+  note: "/note/:year/:month/:day/:slug/"
 
 menu:
   main: 
     - name   : "home"
-      url  : "/"
+      url    : "/"
       weight : 1
     - name   : "about"
-      url  : "/about/"
+      url    : "/about/"
       weight : 2
-    - name     : "posts"
+    - name   : "posts"
       url    : "/posts/"
       weight : 3
-    - name     : "posts-by-tags"
+    - name   : "posts-by-tags"
       url    : "/tags/"
       weight : 4
-    - name     : "links"
+    - name   : "links"
       url    : "/links/"
       weight : 5
 
 params:
-  footer : "[tweeter](https://twitter.com/darachm) | [github](https://github.com/darachm)"
+  footer: "[tweeter](https://twitter.com/darachm) | [github](https://github.com/darachm)"
 
