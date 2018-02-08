@@ -1,10 +1,9 @@
 ---
-title: ""
-date: 
+title: "quotes, snippets, and bits"
+date: 2018-02-07T10:32:30-05:00
 draft: true
 ---
-OTHER
-quotes,_snippets,_bits
+
 
 <dl>
 <dt>&quot;Criticism is the mother of methodology.&quot;</dt>
@@ -43,3 +42,23 @@ is simply to give ignorance a gratuitous and preposterous dignity.</dt>
 Science is a match that man has just got alight. He thought he was in a room — in moments of devotion, a temple — and that his light would be reflected from and display walls inscribed with wonderful secrets and pillars carved with philosophical systems wrought into harmony. It is a curious sensation, now that the preliminary splutter is over and the flame burns up clear, to see his hands and just a glimpse of himself and the patch he stands on visible, and around him, in place of all that human comfort and beauty he anticipated — darkness still.</dt>
 <dd>H. G. Wells, "The Rediscovery of the Unique" (The Fortnightly Review, N. S. 50, July 1891)</dd>
 </dl>
+
+# Tao Te Ching chapters from UK LeGuin's rendering
+
+## 17 Acting Simply
+
+Acting simply
+True leaders
+are hardly known to their followers.
+Next after them are the leaders
+the people know and admire;
+after them, those they fear;
+after them, those they despise.
+To give no trust
+is to get no trust.
+When the work’s done right,
+with no fuss or boasting,
+ordinary people say,
+Oh, we did it.
+
+
