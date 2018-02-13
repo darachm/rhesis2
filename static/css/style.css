@@ -60,9 +60,21 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
 
 a {
   text-decoration: none;
-/* This bit ripped from the YAML spec: http://www.yaml.org/spec/1.2/spec.html */
-  background: url(../img/term.png) no-repeat bottom right;
-/*  background: #eee; padding: 2px; border-radius: 2px;*/
+/* This bit ripped from the YAML spec: http://www.yaml.org/spec/1.2/spec.html 
+  background: url(../img/term.png) no-repeat bottom right; 
+*/
+  padding:5px;
+  background: 
+    url(../img/term.png) no-repeat bottom right,
+    url(../img/term.png) no-repeat top left,
+    url(../img/rterm.png) no-repeat right bottom,
+    url(../img/rterm.png) no-repeat left top;
+/*
+    url(../img/term.png) no-repeat bottom left,
+    url(../img/term.png) no-repeat top right,
+    url(../img/rterm.png) no-repeat right top,
+    url(../img/rterm.png) no-repeat left bottom;
+*/
 }
 a:hover {
   /*background: #aaa; color: #fff;*/

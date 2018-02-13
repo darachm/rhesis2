@@ -14,3 +14,9 @@ and propose simple models underpinning phenomena. The simplification
 process is essential. We cannot all be experts - we cannot always
 have a trained mind or machine to make decisions. What we learn about
 the world has to be transferred to be effective.
+
+---
+
+Would you rather be a young fool, or an old fool? Better to get it
+over with, expose your ignorance, drive the flow of science, and thus
+be ready to help keep this all going.
