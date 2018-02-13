@@ -22,3 +22,11 @@ Koonin argues that you get "preferrential attachment" of regulatory
 networks simply by the more attached nodes having greatly more
 consequences if they fail, thus attaching to them is beneficial.
 
+---
+
+some people are like weeds. they put their roots wherever they are,
+as much as they can.
+some people are like nuts. they require just the right conditions to
+germinate and put down roots. 
+some people make clones of themselves, different personalities for
+different communities. (politicians)
