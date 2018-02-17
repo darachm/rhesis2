@@ -36,3 +36,14 @@ Never delete, but laboriously re-organize.
 Once you have a giant master, then outline it. Then arrange the
 outline and the notes, and repeat. Decide what goes in the misc bin
 at the end.
+
+
+---
+
+Esteban Mazzoni told me that someone had this think they'd do.
+They would have to be able to interrupted (theoretically), at every
+moment, at every pipetting, every step, you have to be able to stop
+and justify why this action leads to the end goal of the science, to
+the big picture. Like, all the way to human disease.
+
+I gotta do that more.
