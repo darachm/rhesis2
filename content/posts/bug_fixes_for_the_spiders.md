@@ -14,47 +14,49 @@ tags:
 Here, I document problems I've encountered and some notes to help
 others figure out similar problems of their own
 
-# Code and computers 
+# Code 
 
-## t420 fails to boot, CMOS battery
+## `Makefiles` and `rmarkdown::render` fighting over reproducible research
 
-180126
+180417
 
-I've had a 2011 t420 thinkpad for a while. I got it used, and it's
-been robustly performing. 
+In effort to both provide a reproducible setup for the analysis for
+a paper I was writing, and to placate my perfectionism, I tried 
+using `Makefiles` to run a set of `rmarkdown::render`-typeset documents,
+for all the R code (and more) I used. It was working fine, then we
+sent it out for review. Dumbly, I then updated my laptop, which
+then updated libraries, which required `tidy` to update, which
+was a mess...
 
-Then I started to get some issues with booting. 
-Usually it's on or crunching over night plugged in, 
-with brief reboots every few weeks.
-On the infrequent times that I tell it to suspend, I started seeing
-a behaviour where it would cycle with power light coming on, 
-then it would try to boot, fail, and keep cycling ad infinitum.
-Lights on the back of the case were on. The way to get out was to
-remove the main battery and unplug, wait a bit, then re-power and
-try turning it on.
+First off, the 1.9 version of `rmarkdown::render` drops support
+for the usual latex engine, and requires that you use the author's
+own custom reboot of the code. So that was a warning sign, but I
+just reverted to 1.8 and it seemed to work.
 
-The day of submitting a paper, in the evening after it was submitted
-(great timing), I told it to suspend. In the morning, it refused to
-turn on. No lights, no nothing, no how. Nothing on the back, tried
-different power supplies. Dead as I could tell. 
-Taking out main battery, unplugging, and holding power button for
-about 2 minutes didn't do it.
+Later, I realized that the `Makefile` was running `rmarkdown::render`
+commands, but they weren't doing the same thing they did a few months
+ago! I could swear the options were different, but I don't know how
+to pull the old documentation short of installing it so I just tried
+to debug it.  
+It became a multi-hour nightmare of debug testing lots of different
+options, with the order of operations and cleaning mattering for the
+output in strange ways.
 
-The fix was to take the RAM cover off the underside, flip it over,
-pry the keyboard towards the back and off, then reach in there with
-a screwdriver and get the CMOS battery plug up and off.
-After a minute or two, I put it back in, and it started to
-boot off of battery power! Then it died. I re-opened, got it wiggled
-off, then re-did it, and got it to boot off of battery again
-and back to life. 
+The main error was pandoc 67, it couldn't find a png it was looking
+for during the typsetting, but `rmarkdown::render` thought it had
+made it. Specifically, `*2-1.png` was needed but only `*3-1.png` was
+in the `*_files` folder.
 
-I am ordering a new CMOS battery now to test if it's just an old
-battery.
+It ended up being that if you interrupt a `Makefile` run to debug
+something, it'll delete some but not all files that aren't protected.
+So it'll leave a `*_cache` folder around for `rmarkdown::render` 
+to find, and `rmarkdown::render` assumes that means the files are
+made, and skip it.
 
-In conclusion, I think the old dead CMOS battery screws up the boot.
-Surprisingly contrary to other reports, it didn't have lights on
-the back panel that reacted to power supply events, but nevertheless
-it did get fixed.
+Solution was to deep clean and delete everything. Also started to
+use the `.SECONDARY` directive in the `Makefile`, but didn't spend
+much time since I plan on not investing too much time in learning
+any more of GNU make (except what's needed to launch `nextflow`).
 
 ## Perl should be one version (duh)
 
@@ -150,6 +152,50 @@ if you have someone who really likes PDFs for their vector graphics
 So for `ggplot`, that's `library(Cairo)` and put `device=cairo_pdf`
 in the `ggsave` call. 
 [That's from here]( https://stackoverflow.com/questions/28746938/ggsave-losing-unicode-charaters-from-ggplotgridextra).
+
+# Computers 
+
+## t420 fails to boot, CMOS battery
+
+180126
+
+I've had a 2011 t420 thinkpad for a while. I got it used, and it's
+been robustly performing. 
+
+Then I started to get some issues with booting. 
+Usually it's on or crunching over night plugged in, 
+with brief reboots every few weeks.
+On the infrequent times that I tell it to suspend, I started seeing
+a behaviour where it would cycle with power light coming on, 
+then it would try to boot, fail, and keep cycling ad infinitum.
+Lights on the back of the case were on. The way to get out was to
+remove the main battery and unplug, wait a bit, then re-power and
+try turning it on.
+
+The day of submitting a paper, in the evening after it was submitted
+(great timing), I told it to suspend. In the morning, it refused to
+turn on. No lights, no nothing, no how. Nothing on the back, tried
+different power supplies. Dead as I could tell. 
+Taking out main battery, unplugging, and holding power button for
+about 2 minutes didn't do it.
+
+The fix was to take the RAM cover off the underside, flip it over,
+pry the keyboard towards the back and off, then reach in there with
+a screwdriver and get the CMOS battery plug up and off.
+After a minute or two, I put it back in, and it started to
+boot off of battery power! Then it died. I re-opened, got it wiggled
+off, then re-did it, and got it to boot off of battery again
+and back to life. 
+
+I am ordering a new CMOS battery now to test if it's just an old
+battery.
+
+In conclusion, I think the old dead CMOS battery screws up the boot.
+Surprisingly contrary to other reports, it didn't have lights on
+the back panel that reacted to power supply events, but nevertheless
+it did get fixed.
+
+
 
 # Benchwork 
 
