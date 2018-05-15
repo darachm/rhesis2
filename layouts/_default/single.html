@@ -1,7 +1,7 @@
 {{ partial "baselink.html" . }}
 
 <div class="article-meta">
-<span class="title">{{ .Title }}</span>
+<span class="title">{{ .Title | markdownify }}</span>
 </br>
 {{ with .Params.author }}<span class="author">{{ . }}</span>{{ end }}
 {{ if .Params.date }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
