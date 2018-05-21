@@ -19,6 +19,10 @@ pool by specifying `/dev/sdb` and `/dev/sdc`, well those just changed
 because someone pulled the plug. And that means those are now at
 `/dev/sdf` and `/dev/sdg`.
 
+[^zfs104]
+
+[^docz]
+
 So the short term fix is to link them, with 
 `link /dev/sdf /dev/sdb`, `link /dev/sdf1 /dev/sdb1`, and
 `link /dev/sdf9 /dev/sdb9`. This links all the partitions over, and
@@ -31,3 +35,8 @@ reading all disks to look for it's filesystems and IDs on the disk,
 and then mounting them. Importantly, when it looks in there then
 it remembers the disk ID, which doesn't change when you unplug and
 replug it. Then a `zpool clear` fixed it (for me).
+
+
+[zfs104]: https://github.com/openzfsonosx/zfs/issues/104#issuecomment-30363146
+
+[docz]: https://github.com/zfsonlinux/zfs/wiki/faq#changing-dev-names-on-an-existing-pool
