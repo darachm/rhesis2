@@ -3,6 +3,8 @@ body {
   margin: auto;
   padding: 1em;
   line-height: 1.5em;
+  font-family:'DejaVu Sans',sans-serif;                               
+  font-weight: 100;
 }
 
 /* header and footer areas */
