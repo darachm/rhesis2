@@ -1,6 +1,8 @@
 body {
-  font-family: sans-serif;
-/*  font-family: Optima, Candara, Calibri, Arial, sans-serif;*/
+/*  font-family: sans-serif;
+  font-family: Optima, Candara, Calibri, Arial, sans-serif;*/
+  font-family:'DejaVu Sans',sans-serif;                               
+  font-weight: 300;
 }
 code {
   font-family: "Lucida Console", Monaco, monospace;
